@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../../assest/css/style.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div class="content">
+        <div class="container">
+            <h2>Registro</h2>
+            <div class="inputs">
+                <input type="hidden" id="id">
+                <label>firstname</label>
+                <input class="input-text" type="text" id="firstname" placeholder="firstname">
+                <label>lastname</label>
+                <input class="input-text" type="text" id="lastname" placeholder="lastname">
+                <label>email</label>
+                <input class="input-text" type="email" id="email" placeholder="email">
+                <label>phone</label>
+                <input class="input-text" type="tel" id="phone" placeholder="phone">
+                <label>municipality</label>
+                <input class="input-text" type="hidden" id="municipality_id" placeholder="municipality">
+                <input class="input-text" type="text" id="municipality" placeholder="municipality">
+
+                <label>TypeDocument</label>
+                <select class="input-text" id="TypeDocument"></select>
+                <input class="input-text" type="text" id="document" placeholder="number document">
+
+                <label>datebirth</label>
+                <input class="input-text" type="date" id="datebirth">
+                <label>gender</label>
+                <select class="input-text" id="gender">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+                <label>Address</label>
+                <div class="address-container">
+                    <select class="input-text" id="Address">Address</select>
+                    <input class="input-text" type="text" id="numeral1">
+                    <input class="input-text" type="text" id="numeral2">
+                    <input class="input-text" type="text" id="numeral3">
+                </div>
+
+                <label>Username</label>
+                <input class="input-text" type="text" id="Username" placeholder="Username">
+                <label>Password</label>
+                <input class="input-text" type="password" id="Password" placeholder="Password">
+            </div>
+            <button class="button" onclick="save()">Registrar</button>
+            <a class="link" href="./login.html">¿Ya tienes una cuenta? Inicia sesión</a>
+
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script type="application/javascript" src="/js/utils/enum.js"></script>
+<script type="application/javascript" src="/js/segurity/register.js"></script>
+
+<script type="application/javascript" src="/js/utils/autoComplete.js"></script>
+<script>
+    // funciones de enums
+    TypeDocument();
+    Address();
+    // funciones de autoCompletes
+    loadmunicipality();
+</script>
+
+
+</html>

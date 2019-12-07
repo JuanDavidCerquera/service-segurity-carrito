@@ -13,6 +13,7 @@ public class Supplies extends ABaseEntity{
 	@Column(name ="code")private String code;
 	@Column(name ="name")private String name;
 	@Column(name ="description")private String description;
+	
 	public String getCode() {
 		return code;
 	}

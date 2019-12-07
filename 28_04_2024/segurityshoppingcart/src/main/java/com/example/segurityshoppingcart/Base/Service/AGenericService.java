@@ -29,15 +29,15 @@ public abstract class AGenericService<T extends ABaseEntity> implements IGeneric
     
     @Override
     public List<T> allByDeletedAt() throws Exception {
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<T> query = criteriaBuilder.createQuery(getEntityClass());
-        Root<T> root = query.from(getEntityClass());
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();//construye criterios para la query
+        CriteriaQuery<T> query = criteriaBuilder.createQuery(getEntityClass());//construye la query segun la clase
+        Root<T> root = query.from(getEntityClass());//de donde saca la informacion
 
-        // Agrega la condición para filtrar los registros no eliminados
-        query.select(root)
-             .where(criteriaBuilder.isNull(root.get("deletedAt")));
+        //le agregamos una condicion a la query
+        query.select(root)//selecciona la entidad donde va a hacer la consulta
+             .where(criteriaBuilder.isNull(root.get("deletedAt")));//selecciona los registros que no tengan fecha de eliminacion
 
-        // Ejecuta la consulta y devuelve los resultados
+      
         return entityManager.createQuery(query).getResultList();
     }
     

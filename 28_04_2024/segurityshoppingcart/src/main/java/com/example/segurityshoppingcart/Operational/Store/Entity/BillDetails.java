@@ -10,28 +10,20 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="facturaDetalle")
+@Table(name ="billdetails")
 public class BillDetails extends ABaseEntity{
 	
-	@Column(name ="code")private String code;
+
 	@Column(name ="amount")private int amount;
 	@Column(name ="price")private Double Price;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "factura_id")
+	@JoinColumn(name = "bill_id")
 	private Bill bill;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id")
 	private Product product;
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public int getAmount() {
 		return amount;

@@ -10,14 +10,17 @@ import jakarta.persistence.Table;
 @Table(name = "product")
 public class Product extends ABaseEntity{
 	
-	@Column(name = "price")private Double prive;
+	@Column(name = "price")private Double price;
 	@Column(name ="code")private String code;
 	@Column(name = "name")private String name;
-	public Double getPrive() {
-		return prive;
+
+	
+
+	public Double getPrice() {
+		return price;
 	}
-	public void setPrive(Double prive) {
-		this.prive = prive;
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 	public String getCode() {
 		return code;

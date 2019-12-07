@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Table(name = "role")
 public class Role extends ABaseEntity{
         
-    @Column(name = "name", nullable = false, unique = true)
+    @Column(name = "name", nullable = false)
     private String name;
     
     @Column(name = "description", nullable = false)

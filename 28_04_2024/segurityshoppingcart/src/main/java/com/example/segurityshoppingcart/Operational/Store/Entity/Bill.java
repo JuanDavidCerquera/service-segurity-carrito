@@ -3,9 +3,8 @@ package com.example.segurityshoppingcart.Operational.Store.Entity;
 import java.time.LocalDateTime;
 
 import com.example.segurityshoppingcart.Base.Entity.ABaseEntity;
-import com.example.segurityshoppingcart.Operational.Entity.Client;
-import com.example.segurityshoppingcart.Operational.Entity.Employed;
-
+import com.example.segurityshoppingcart.Operational.Base.Entity.Client;
+import com.example.segurityshoppingcart.Operational.Base.Entity.Employed;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,6 +18,7 @@ import jakarta.persistence.Table;
 public class Bill extends ABaseEntity{
 
 	@Column(name="date")private LocalDateTime date;
+	@Column(name="price")private double price;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "client_id")
@@ -27,6 +27,16 @@ public class Bill extends ABaseEntity{
 	@ManyToOne(fetch =FetchType.EAGER)
 	@JoinColumn(name = "employed_id")
 	private Employed employed;
+	
+	
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
 	public LocalDateTime getDate() {
 		return date;

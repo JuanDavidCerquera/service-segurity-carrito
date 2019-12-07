@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrito</title>
+    <link rel="stylesheet" href="../../../assest/css/styletable.css">
+</head>
+
+<body>
+
+    <!-- Botón para abrir el modal -->
+    <button class="button" id="openModalBtn">Add product</button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closemodal" class="close">&times;</span>
+            <h2>product carrito</h2>
+            <div class="inputs-modal">
+                <input type="hidden" id="id">
+                <label>product</label>
+                <input class="input-text" type="hidden" id="product_id">
+                <input class="input-text" type="text" id="product" placeholder="product">
+                <label>price </label>
+                <input class="input-text" type="text" readonly id="price" placeholder="price">
+                <label>amount</label>
+                <input class="input-text" type="number" id="amount" placeholder="amount">
+                <label>price subtotal</label>
+                <input class="input-text" type="number" readonly id="pricesubtotal" placeholder="pricesubtotal">
+            </div>
+            <button id="modalbutton" class="button" onclick="listproduct()">save product</button>
+            <br>
+            <button id="modalbuttonBill" class="button">Generate bill</button>
+        </div>
+    </div>
+    <div id="modalbill" class="modal">
+        <div class="modal-content">
+            <span id="closemodalbill" class="close">&times;</span>
+            <h2>Bill</h2>
+            <div class="inputs-modal">
+                <input type="hidden" id="id">
+                <label>date</label>
+                <input class="input-text" type="datetime-local" id="date" placeholder="date">
+                <label>client</label>
+                <input class="input-text" type="hidden" id="client_id">
+                <input class="input-text" type="text" id="client" placeholder="client">
+                <label>employed</label>
+                <input class="input-text" type="hidden" id="employed_id">
+                <input class="input-text" type="text" id="employed" placeholder="employed">
+            </div>
+            <button id="modalbuttonbill" class="button" onclick="savebill()">save</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="application/javascript" src="/js/operational/store/carrito.js"></script>
+    <script type="application/javascript" src="/js/utils/autoComplete.js"></script>
+
+    <script>
+        loadproductbill();
+        loadclient();
+        loademployed();
+    </script>
+</body>
+
+</html>

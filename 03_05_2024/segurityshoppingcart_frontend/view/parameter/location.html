@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location List</title>
+    <link rel="stylesheet" href="../../assest/css/styletable.css">
+</head>
+
+<body>
+
+    <!-- Botón para abrir el modal -->
+    <button class="button" id="openModalBtn">Add location</button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>location</h2>
+            <input type="hidden" id="id">
+            <label>name</label>
+            <input class="input-text" type="text" id="name" placeholder="name">
+            <label>code</label>
+            <input class="input-text" type="text" id="code" placeholder="code">
+            <label>description</label>
+            <input class="input-text" type="text" id="description" placeholder="description">
+            <label>municipality</label>
+            <input class="input-text" type="hidden" id="municipality_id">
+            <input class="input-text" type="text" id="municipality" placeholder="municipality">
+            <button id="modalbutton" class="button">Guardar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>location List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>code</th>
+                    <th>description</th>
+                    <th>municipality</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultData">
+                <!-- Data will be filled here using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="application/javascript" src="/js/parameter/location.js"></script>
+
+    <!-- script enums -->
+    <script type="application/javascript" src="/js/utils/autoComplete.js"></script>
+    <script>
+        loadData();
+        loadmunicipality();
+    </script>
+</body>
+
+</html>

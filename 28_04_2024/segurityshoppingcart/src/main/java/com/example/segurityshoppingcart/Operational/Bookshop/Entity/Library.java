@@ -3,8 +3,8 @@ package com.example.segurityshoppingcart.Operational.Bookshop.Entity;
 import java.time.LocalDateTime;
 
 import com.example.segurityshoppingcart.Base.Entity.ABaseEntity;
-import com.example.segurityshoppingcart.Operational.Entity.Client;
-import com.example.segurityshoppingcart.Operational.Entity.Employed;
+import com.example.segurityshoppingcart.Operational.Base.Entity.Client;
+import com.example.segurityshoppingcart.Operational.Base.Entity.Employed;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,4 +38,53 @@ public class Library extends ABaseEntity{
 	
 	@Column(name="date", nullable = true)
 	private LocalDateTime date;
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public Employed getEmployed() {
+		return employed;
+	}
+
+	public void setEmployed(Employed employed) {
+		this.employed = employed;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public Boolean getAction() {
+		return action;
+	}
+
+	public void setAction(Boolean action) {
+		this.action = action;
+	}
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
+	
 }

@@ -1,4 +1,8 @@
 /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a8a8a8;
+}
 
 th {
     background-color: #007bff;

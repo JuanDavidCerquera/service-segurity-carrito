@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>libary List</title>
+    <link rel="stylesheet" href="../../../assest/css/styletable.css">
+</head>
+
+<body>
+
+    <!-- Botón para abrir el modal -->
+    <button class="button" id="openModalBtn">Add libary</button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>libary</h2>
+            <div class="inputs-modal">
+                <input type="hidden" id="id">
+                <label>amount</label>
+                <input class="input-text" type="number" id="amount" placeholder="amount">
+                <label>Action</label>
+                <select id="action" class="input-text">
+                    <option value=true>prestado</option>
+                    <option value=false>devuelto</option>
+                </select>
+                <label>date</label>
+                <input class="input-text" type="datetime-local" id="date" placeholder="date">
+                <label>book</label>
+                <input class="input-text" type="hidden" id="book_id">
+                <input class="input-text" type="text" id="book" placeholder="book">
+                <label>employed</label>
+                <input class="input-text" type="hidden" id="employed_id">
+                <input class="input-text" type="text" id="employed" placeholder="employed">
+                <label>client</label>
+                <input class="input-text" type="hidden" id="client_id">
+                <input class="input-text" type="text" id="client" placeholder="client">
+
+            </div>
+            <button id="modalbutton" class="button">Guardar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>libary List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>employed</th>
+                    <th>action</th>
+                    <th>book</th>
+                    <th>amount</th>
+                    <th>client</th>
+                    <th>date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultData">
+                <!-- Data will be filled here using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="application/javascript" src="/js/operational/bookshop/library.js"></script>
+    <script type="application/javascript" src="/js/utils/autoComplete.js"></script>
+    <script>
+        loadData();
+        loadbook();
+        loadclient();
+        loademployed();
+    </script>
+</body>
+
+</html>

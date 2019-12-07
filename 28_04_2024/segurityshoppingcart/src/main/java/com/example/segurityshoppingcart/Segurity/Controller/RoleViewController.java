@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("v1/api/userView")
+@RequestMapping("v1/api/roleView")
 public class RoleViewController extends ABaseController<RoleView, IRoleViewService>{
 
     protected RoleViewController(IRoleViewService service) {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product List</title>
+    <link rel="stylesheet" href="../../../assest/css/styletable.css">
+</head>
+
+<body>
+
+    <!-- Botón para abrir el modal -->
+    <button class="button" id="openModalBtn">Add product</button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>product</h2>
+            <div class="inputs-modal">
+                <input type="hidden" id="id">
+                <label>price</label>
+                <input class="input-text" type="number" id="price" placeholder="price">
+                <label>code</label>
+                <input class="input-text" type="text" id="code" placeholder="code">
+                <label>name</label>
+                <input class="input-text" type="text" id="name" placeholder="name">
+            </div>
+            <button id="modalbutton" class="button">Guardar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>product List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>price</th>
+                    <th>code</th>
+                    <th>name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultData">
+                <!-- Data will be filled here using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="application/javascript" src="/js/operational/store/product.js"></script>
+
+
+    <script>
+        loadData();
+    </script>
+</body>
+
+</html>

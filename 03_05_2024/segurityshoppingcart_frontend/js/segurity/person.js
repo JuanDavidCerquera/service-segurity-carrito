@@ -10,8 +10,6 @@ function loadData() {
             var html = "";
             var data = response.data;
             data.forEach(function (item) {
-                // Construir el HTML para cada objeto
-                // if (!item.deletedAt) { // Verificar si el campo deletedAt es nulo (no eliminado lógicamente)
                 html +=
                     `<tr>
                     <td>${item.firstName}</td>
@@ -28,8 +26,6 @@ function loadData() {
                     <td><button class='edit' data-id='${item.id}'>Edit</button>
                         <button class='delete' onclick="deleteById(${item.id})" >Delete</button></td>
                     </tr>`;
-
-                // };
             });
 
             $("#resultData").html(html);
@@ -48,7 +44,7 @@ function loadData() {
             // boton agregar
             $("#openModalBtn").click(function () {
                 $("#modalbutton").text("save");
-                $("#modalbutton").attr("onclick", "savesas()");
+                $("#modalbutton").attr("onclick", "save()");
                 $("#modal").show();
             });
 
@@ -115,7 +111,7 @@ function findById(id) {
 }
 
 
-
+/*
 
 function loadmunicipality() {
     console.log("Ejecutando loadmunicipality");
@@ -160,7 +156,7 @@ function loadmunicipality() {
         },
     });
 }
-
+*/
 
 
 
@@ -172,12 +168,12 @@ function clearData() {
     $("#email").val("");
     $("#phone").val("");
     $("#document").val("");
-    $("#municipality_id").val("");
+    $("#municipality").val("");
     $("#datebirth").val("");
-    $("#gender").val("");
+    // $("#gender").val("");
     $(".address-container input").val(""); // Limpia los campos de dirección
-    $("#Address").val(""); // Limpia el campo de dirección
-    $("#TypeDocument").val(""); // Limpia el campo de tipo de documento
+    // $("#Address").val(""); // Limpia el campo de dirección
+    // $("#TypeDocument").val(""); // Limpia el campo de tipo de documento
 }
 
 
@@ -196,7 +192,7 @@ function save() {
             "document": $("#document").val(),
             "email": $("#email").val(),
             "phone": $("#phone").val(),
-            "dateOfBirth": $("#datebirth").val(),
+            "dateBirth": $("#datebirth").val(),
             "gender": $("#gender").val(),
             "address": $("#Address").val() + ' No ' + $("#numeral1").val() + ' - ' + $("#numeral2").val() + ' - ' + $("#numeral3").val(),
             "municipality": {
@@ -220,9 +216,11 @@ function save() {
                 alert("Registro agregado con éxito: " + id);
                 clearData();
                 loadData();
+                $("#modal").hide();
             },
             error: function (error) {
                 alert("Error: No se pudo agregar el registro. Por favor, inténtelo nuevamente.");
+                $("#modal").hide();
             },
         });
     } catch (error) {
@@ -267,6 +265,7 @@ function update() {
             alert("Registro actualizado con éxito: " + response.id);
             clearData();
             loadData();
+            $("#modal").hide();
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.error("Error en la solicitud AJAX:", textStatus, errorThrown);
@@ -274,6 +273,7 @@ function update() {
 
             loadData();
             clearData();
+            $("#modal").hide();
         }
     });
 }
