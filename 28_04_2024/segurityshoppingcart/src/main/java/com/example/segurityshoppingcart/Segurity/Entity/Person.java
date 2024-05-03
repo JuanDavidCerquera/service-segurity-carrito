@@ -21,33 +21,41 @@ public class Person extends ABaseEntity{
 
     @Column(name = "lastname", nullable = false)
     private String lastName;
-    @Column(name = "email", length = 50, nullable = false, unique = true)
+    @Column(name = "email",nullable = false, unique = true)
     private String email;
     
-    @Column(name = "phone", length = 15, nullable = false)
+    @Column(name = "phone", nullable = false)
     private String phone;
     
     @Column(name = "datebirth", nullable = false)
     private LocalDate dateBirth;
     
-    @Column(name = "gender", length = 10, nullable = false)
+    @Column(name = "gender", nullable = false)
     private String gender;
     
-    @Column(name = "address", length = 100, nullable = false)
+    @Column(name = "address", nullable = false)
     private String address;
     
-    @Column(name = "type_document", length = 50, nullable = false)
+    @Column(name = "type_document", nullable = false)
     private String typeDocument;
     
-    @Column(name = "document", length = 10, nullable = false, unique=true)
+    @Column(name = "document",nullable = false, unique=true)
     private String Document;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false )
     @JoinColumn(name = "municipality_id", nullable = false)
-    private Municipality minucipality;
+    private Municipality municipality;
     
 
-    public String getFirstName() {
+    public Municipality getMunicipality() {
+		return municipality;
+	}
+
+	public void setMunicipality(Municipality municipality) {
+		this.municipality = municipality;
+	}
+
+	public String getFirstName() {
         return firstName;
     }
 

@@ -8,19 +8,44 @@ import org.springframework.beans.BeanUtils;
 
 import com.example.segurityshoppingcart.Base.Entity.ABaseEntity;
 import com.example.segurityshoppingcart.Base.IRepository.IBaseRepository;
+import com.example.segurityshoppingcart.Base.IService.IBaseService;
+/*
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
+*/
 
 
-public abstract class ABaseService<T extends ABaseEntity> implements com.example.segurityshoppingcart.Base.IService.IBaseService<T> {
+public abstract class ABaseService<T extends ABaseEntity> implements IBaseService<T> {
     
     
     protected abstract  IBaseRepository<T, Long> getRepository();
+    /*
+    protected abstract Class<T> getEntityClass();
     
+    @PersistenceContext
+    private EntityManager entityManager;
+    
+    @Override
+    public List<T> allByDeletedAt() throws Exception {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<T> query = criteriaBuilder.createQuery(getEntityClass());
+        Root<T> root = query.from(getEntityClass());
 
+        // Agrega la condición para filtrar los registros no eliminados
+        query.select(root)
+             .where(criteriaBuilder.isNull(root.get("deletedAt")));
+
+        // Ejecuta la consulta y devuelve los resultados
+        return entityManager.createQuery(query).getResultList();
+    }
+    */
     @Override
     public List<T> all() throws Exception {
         return getRepository().findAll();
     }
-
     @Override
     public List<T> findByStateTrue() throws Exception {
         return getRepository().findAll();

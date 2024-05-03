@@ -10,7 +10,7 @@ import com.example.segurityshoppingcart.Parameter.IService.IMunicipalityService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("v1/api/minucipality")
+@RequestMapping("v1/api/municipality")
 public class MunicipalityController extends ABaseController<Municipality, IMunicipalityService>{
     public MunicipalityController(IMunicipalityService service){
         super(service , "municipality");

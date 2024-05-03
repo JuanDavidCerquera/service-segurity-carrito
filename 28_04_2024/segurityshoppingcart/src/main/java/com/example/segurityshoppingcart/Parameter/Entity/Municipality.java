@@ -15,13 +15,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table (name = "municipality")
 public class Municipality extends ABaseEntity{
-	@Column(name = "name", nullable = false)
+	
+	@Column(name = "name")
     private String name;
     
-    @Column(name = "code", nullable = false)
+    @Column(name = "code")
     private String code;
     
-    @Column(name = "description", nullable = false)
+    @Column(name = "description")
     private String description;
     
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

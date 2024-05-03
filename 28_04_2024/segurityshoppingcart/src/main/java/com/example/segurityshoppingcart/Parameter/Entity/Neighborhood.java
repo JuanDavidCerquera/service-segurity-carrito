@@ -14,13 +14,13 @@ import jakarta.persistence.Table;
 @Table(name = "neighborhood")
 public class Neighborhood extends ABaseEntity {
 
-	  @Column(name = "name", nullable = false, unique = true)
+	  @Column(name = "name")
 	    private String name;
 	    
-	@Column(name = "code", nullable = false)
+	@Column(name = "code")
 	    private String code;
 	
-	@Column(name = "description", nullable = false)
+	@Column(name = "description")
   private String description;
 	
 	

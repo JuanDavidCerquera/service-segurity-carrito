@@ -9,13 +9,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "view")
 public class View extends ABaseEntity{
-    	@Column(name = "name", length = 50, nullable = false)
+    	@Column(name = "name", nullable = false)
     private String name;
     
-    @Column(name = "route", nullable = false)
+    @Column(name = "route", nullable = false, unique = true)
     private String route;
     
-    @Column(name = "description", length = 50, nullable = false, unique = true)
+    @Column(name = "description")
     private String description;
 
     public String getName() {

@@ -9,11 +9,11 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "module")
 public class Modules extends ABaseEntity{
-    	@Column(name = "name", length = 50, nullable = false)
+    	@Column(name = "name", nullable = false)
     private String name;
 
     
-    @Column(name = "description", length = 50, nullable = false, unique = true)
+    @Column(name = "description")
     private String description;
 
     public String getName() {

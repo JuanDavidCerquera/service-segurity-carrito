@@ -13,13 +13,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Status")
 public class Status extends ABaseEntity{
-	@Column(name = "code", nullable = false)
+	@Column(name = "code")
     private String code;
 	
-	@Column(name = "name", nullable = false)
+	@Column(name = "name")
     private String name;
 	
-	@Column(name = "description", nullable = false)
+	@Column(name = "description")
     private String description;
 	
 	
