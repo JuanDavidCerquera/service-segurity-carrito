@@ -121,4 +121,19 @@ public class Person extends ABaseEntity{
 
   
     
+
+    /**
+     * @return Municipality return the minucipality
+     */
+    public Municipality getMinucipality() {
+        return minucipality;
+    }
+
+    /**
+     * @param minucipality the minucipality to set
+     */
+    public void setMinucipality(Municipality minucipality) {
+        this.minucipality = minucipality;
+    }
+
 }

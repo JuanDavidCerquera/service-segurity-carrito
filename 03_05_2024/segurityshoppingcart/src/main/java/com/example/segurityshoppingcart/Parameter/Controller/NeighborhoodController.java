@@ -14,7 +14,7 @@ import com.example.segurityshoppingcart.Parameter.IService.INeighborhoodService;
 public class NeighborhoodController extends ABaseController<Neighborhood, INeighborhoodService>{
     protected NeighborhoodController(INeighborhoodService service) {
         super(service, "neighborhood");
-        //TODO Auto-generated constructor stub
+     
     }
 
     

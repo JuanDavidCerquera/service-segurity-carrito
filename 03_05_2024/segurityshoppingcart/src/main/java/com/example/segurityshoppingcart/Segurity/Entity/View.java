@@ -4,6 +4,9 @@ import com.example.segurityshoppingcart.Base.Entity.ABaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +20,12 @@ public class View extends ABaseEntity{
     
     @Column(name = "description", length = 50, nullable = false, unique = true)
     private String description;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "module_id")
+    private Modules modules;
+
+    
 
     public String getName() {
         return name;
@@ -43,4 +52,13 @@ public class View extends ABaseEntity{
     }
 
     
+
+    public Modules getModules() {
+        return modules;
+    }
+
+    public void setModules(Modules modules) {
+        this.modules = modules;
+    }
+
 }

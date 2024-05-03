@@ -16,7 +16,7 @@ public class NeighborhoodService extends ABaseService<Neighborhood> implements I
 
 	@Override
 	protected IBaseRepository<Neighborhood, Long> getRepository() {
-		// TODO Auto-generated method stub
+	
 		return repository;
 	}
 	

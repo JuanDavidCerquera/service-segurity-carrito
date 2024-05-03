@@ -16,7 +16,7 @@ public class BookController extends ABaseController<Book, IBookService>{
 
 	protected BookController(IBookService service) {
 		super(service, "Book");
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }

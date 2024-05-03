@@ -15,15 +15,14 @@ import com.example.segurityshoppingcart.Parameter.IService.IStatusService;
 public class StatusService  extends ABaseService<Status> implements IStatusService{
 
 	
-	@Autowired
-	public IStatusRepository repository;
-
-
 
 	@Override
 	protected IBaseRepository<Status, Long> getRepository() {
-		// TODO Auto-generated method stub
 		return repository;
 	}
+
+	@Autowired
+	public IStatusRepository repository;
+	
 }
 

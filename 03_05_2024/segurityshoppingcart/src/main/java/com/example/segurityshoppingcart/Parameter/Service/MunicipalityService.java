@@ -15,7 +15,7 @@ public class MunicipalityService extends ABaseService<Municipality> implements I
 
 	@Override
 	protected IBaseRepository<Municipality, Long> getRepository() {
-		// TODO Auto-generated method stub
+		
 		return repository;
 	}
 

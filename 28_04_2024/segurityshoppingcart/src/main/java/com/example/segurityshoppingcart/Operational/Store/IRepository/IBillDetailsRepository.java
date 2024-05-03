@@ -8,4 +8,6 @@ import com.example.segurityshoppingcart.Operational.Store.Entity.BillDetails;
 @Repository
 public interface IBillDetailsRepository extends IBaseRepository<BillDetails, Long>{
 
+    
+
 }

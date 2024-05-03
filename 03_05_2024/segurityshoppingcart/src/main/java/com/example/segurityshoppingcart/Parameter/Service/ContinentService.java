@@ -14,7 +14,7 @@ public class ContinentService extends ABaseService<Continent> implements IContin
 
 	@Override
 	protected IBaseRepository<Continent, Long> getRepository() {
-		// TODO Auto-generated method stub
+	
 		return repository;
 	}
 	
