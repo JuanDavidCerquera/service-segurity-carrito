@@ -11,7 +11,7 @@ public interface IBaseService<T extends ABaseEntity> {
 
     List<T> all() throws Exception;
 
-    List<T> findByStateTrue() throws Exception;
+    List<T> allByDeletedAt() throws Exception;
 
 
     Optional<T> findById(Long id) throws Exception;

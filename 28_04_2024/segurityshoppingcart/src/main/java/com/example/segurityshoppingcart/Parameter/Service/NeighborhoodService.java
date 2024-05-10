@@ -23,6 +23,11 @@ public class NeighborhoodService extends ABaseService<Neighborhood> implements I
 	@Autowired
 	public INeighborhoodRepository repository;
 
+	@Override
+	protected Class<Neighborhood> getEntityClass() {
+		return Neighborhood.class;
+	}
+
 
 
 }

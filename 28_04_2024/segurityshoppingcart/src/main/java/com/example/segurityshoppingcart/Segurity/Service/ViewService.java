@@ -18,4 +18,9 @@ return repository;
 
 @Autowired
 public IViewRepository repository;
+
+@Override
+protected Class<View> getEntityClass() {
+	return View.class;
+}
 }

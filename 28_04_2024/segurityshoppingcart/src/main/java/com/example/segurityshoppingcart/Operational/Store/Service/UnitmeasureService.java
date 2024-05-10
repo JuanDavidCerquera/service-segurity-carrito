@@ -20,4 +20,9 @@ public class UnitmeasureService extends ABaseService<Unitmeasure> implements IUn
 	@Autowired
 	private IUnitmeasureRepository repository;
 
+	@Override
+	protected Class<Unitmeasure> getEntityClass() {
+		return Unitmeasure.class;
+	}
+
 }

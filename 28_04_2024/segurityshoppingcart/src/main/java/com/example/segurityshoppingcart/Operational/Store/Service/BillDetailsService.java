@@ -29,6 +29,11 @@ public class BillDetailsService extends ABaseService<BillDetails> implements IBi
 		return repository;
 	}
 	
+	@Override
+	protected Class<BillDetails> getEntityClass() {
+		return BillDetails.class;
+	}
+	
 	@Autowired
 	private IBillDetailsRepository repository;
 	
@@ -132,6 +137,8 @@ public class BillDetailsService extends ABaseService<BillDetails> implements IBi
 			public Optional<IBillDetailIdDto> getIdBillDetails(Long id) {
 				return repository.getIdBillDetails(id);
 			}
+
+
 
 	
 	

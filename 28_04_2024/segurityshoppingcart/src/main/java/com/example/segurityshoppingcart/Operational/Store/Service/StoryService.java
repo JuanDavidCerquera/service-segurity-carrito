@@ -19,4 +19,9 @@ public class StoryService extends ABaseService<Story> implements IStoryService{
 
 	@Autowired
 	private IStoryRepository repository;
+
+	@Override
+	protected Class<Story> getEntityClass() {
+		return Story.class;
+	}
 }

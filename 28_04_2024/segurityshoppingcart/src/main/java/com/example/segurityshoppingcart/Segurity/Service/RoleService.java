@@ -19,4 +19,9 @@ public class RoleService extends ABaseService<Role> implements IRoleService{
      
     @Autowired
     public IRoleRepository repository;
+
+	@Override
+	protected Class<Role> getEntityClass() {
+		return Role.class;
+	}
 }

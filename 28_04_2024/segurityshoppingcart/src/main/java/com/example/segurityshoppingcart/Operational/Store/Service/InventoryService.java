@@ -24,6 +24,11 @@ public class InventoryService extends ABaseService<Inventory> implements IInvent
 		return repository;
 	}
 	
+	@Override
+	protected Class<Inventory> getEntityClass() {
+		return Inventory.class;
+	}
+	
 	@Autowired
 	private IInventoryRepository repository;
 	
@@ -80,4 +85,5 @@ public class InventoryService extends ABaseService<Inventory> implements IInvent
 	            throw new Exception("Error al guardar la story: " + e.getMessage());
 	        }
 	  }
+
 }

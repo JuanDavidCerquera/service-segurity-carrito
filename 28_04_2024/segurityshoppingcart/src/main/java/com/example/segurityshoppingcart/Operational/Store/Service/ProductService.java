@@ -20,4 +20,9 @@ public class ProductService extends ABaseService<Product> implements IProductSer
 	@Autowired
 	private IProductRepository repository;
 
+	@Override
+	protected Class<Product> getEntityClass() {
+		return Product.class;
+	}
+
 }

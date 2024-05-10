@@ -20,4 +20,9 @@ public class BillService extends ABaseService<Bill> implements IBillService{
 	@Autowired
 	private IBillRepository repository;
 
+	@Override
+	protected Class<Bill> getEntityClass() {
+		return Bill.class;
+	}
+
 }

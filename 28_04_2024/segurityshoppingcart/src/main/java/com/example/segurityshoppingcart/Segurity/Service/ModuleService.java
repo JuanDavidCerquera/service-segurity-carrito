@@ -19,4 +19,9 @@ public class ModuleService extends ABaseService<Modules> implements IModuleServi
     @Autowired
     public IModuleRepository repository;
 
+	@Override
+	protected Class<Modules> getEntityClass() {
+		return Modules.class;
+	}
+
 }

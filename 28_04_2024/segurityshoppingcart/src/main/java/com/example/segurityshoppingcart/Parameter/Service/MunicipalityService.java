@@ -22,5 +22,10 @@ public class MunicipalityService extends ABaseService<Municipality> implements I
 	@Autowired
 	private IMunicipalityRepository repository;
 
+	@Override
+	protected Class<Municipality> getEntityClass() {
+		return Municipality.class;
+	}
+
 	
 }

@@ -24,6 +24,11 @@ public class CountrysService extends ABaseService<Country> implements ICountrySe
     @Autowired
     public ICountryRepository repository;
 
+	@Override
+	protected Class<Country> getEntityClass() {
+		return Country.class;
+	}
+
 
 
 }

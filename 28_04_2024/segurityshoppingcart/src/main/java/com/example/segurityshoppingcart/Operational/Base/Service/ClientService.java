@@ -20,4 +20,9 @@ public class ClientService extends ABaseService<Client> implements IClientServic
 	@Autowired
 	private IClientRepository repository;
 
+	@Override
+	protected Class<Client> getEntityClass() {
+		return Client.class;
+	}
+
 }

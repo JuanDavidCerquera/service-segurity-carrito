@@ -18,4 +18,9 @@ public class UserRoleService extends ABaseService<UserRole> implements IUserRole
      
     @Autowired
     public IUserRoleRepository repository;
+
+	@Override
+	protected Class<UserRole> getEntityClass() {
+		return UserRole.class;
+	}
 }

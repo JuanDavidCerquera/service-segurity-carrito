@@ -18,5 +18,9 @@ public class BookService extends ABaseService<Book> implements IBookService{
 	}
 	@Autowired
 	private IBookRepository repository;
+	@Override
+	protected Class<Book> getEntityClass() {
+		return Book.class;
+	}
 
 }

@@ -20,6 +20,11 @@ public class ContinentService extends ABaseService<Continent> implements IContin
 	
 	@Autowired
 	public  IContinentRepository repository;
+
+	@Override
+	protected Class<Continent> getEntityClass() {
+		return Continent.class;
+	}
 	
 
 

@@ -19,4 +19,9 @@ public class EmployedService extends ABaseService<Employed> implements IEmployed
 
 	@Autowired
 	private IEmployedRepository repository;
+
+	@Override
+	protected Class<Employed> getEntityClass() {
+		return Employed.class;
+	}
 }

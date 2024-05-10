@@ -25,5 +25,12 @@ public class StatusService  extends ABaseService<Status> implements IStatusServi
 		// TODO Auto-generated method stub
 		return repository;
 	}
+
+
+
+	@Override
+	protected Class<Status> getEntityClass() {
+		return Status.class;
+	}
 }
 

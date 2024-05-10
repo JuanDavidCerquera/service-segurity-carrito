@@ -20,4 +20,9 @@ public class StoreService extends ABaseService<Store> implements IStoreService{
 	@Autowired
 	private IStoreRepository repository;
 
+	@Override
+	protected Class<Store> getEntityClass() {
+		return Store.class;
+	}
+
 }

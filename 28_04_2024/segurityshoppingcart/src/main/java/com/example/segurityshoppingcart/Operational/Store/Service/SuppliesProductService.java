@@ -20,4 +20,9 @@ public class SuppliesProductService extends ABaseService<SuppliesProduct> implem
 	@Autowired
 	private ISuppliesProductRepository repository;
 
+	@Override
+	protected Class<SuppliesProduct> getEntityClass() {
+		return SuppliesProduct.class;
+	}
+
 }

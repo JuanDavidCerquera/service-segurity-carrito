@@ -9,6 +9,12 @@ import org.springframework.beans.BeanUtils;
 import com.example.segurityshoppingcart.Base.Entity.ABaseEntity;
 import com.example.segurityshoppingcart.Base.IRepository.IBaseRepository;
 import com.example.segurityshoppingcart.Base.IService.IBaseService;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 /*
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -22,7 +28,7 @@ public abstract class ABaseService<T extends ABaseEntity> implements IBaseServic
     
     
     protected abstract  IBaseRepository<T, Long> getRepository();
-    /*
+    
     protected abstract Class<T> getEntityClass();
     
     @PersistenceContext
@@ -41,15 +47,12 @@ public abstract class ABaseService<T extends ABaseEntity> implements IBaseServic
         // Ejecuta la consulta y devuelve los resultados
         return entityManager.createQuery(query).getResultList();
     }
-    */
+    
     @Override
     public List<T> all() throws Exception {
         return getRepository().findAll();
     }
-    @Override
-    public List<T> findByStateTrue() throws Exception {
-        return getRepository().findAll();
-    }
+
 
 
     @Override

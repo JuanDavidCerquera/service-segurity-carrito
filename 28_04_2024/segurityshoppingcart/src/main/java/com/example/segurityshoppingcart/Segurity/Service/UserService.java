@@ -26,10 +26,15 @@ import com.example.segurityshoppingcart.Segurity.IService.IUserService;
 
 @Service
 public class UserService extends ABaseService<User> implements IUserService{
-    @Override
+  
+	@Override
 protected IBaseRepository<User, Long> getRepository() {
 return repository;
 }
+    @Override
+    protected Class<User> getEntityClass() {
+    	return User.class;
+    }
 
 @Autowired
 public IUserRepository repository;
@@ -119,4 +124,6 @@ public List<IUserViewDto> getUserView(Long userId) throws Exception {
 public List<IUserModuleDto> getUserModule(Long userId) throws Exception {
 	return repository.getUserModule(userId);
 }
+
+
 }

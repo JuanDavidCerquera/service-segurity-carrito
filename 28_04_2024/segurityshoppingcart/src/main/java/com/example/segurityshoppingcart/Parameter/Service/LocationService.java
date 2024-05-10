@@ -27,4 +27,9 @@ public class LocationService extends ABaseService<Location> implements ILocation
     @Autowired
     public ILocationRepository repository;
 
+	@Override
+	protected Class<Location> getEntityClass() {
+		return Location.class;
+	}
+
 }

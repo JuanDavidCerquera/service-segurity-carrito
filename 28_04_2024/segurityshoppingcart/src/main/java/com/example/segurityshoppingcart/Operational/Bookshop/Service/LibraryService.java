@@ -23,6 +23,11 @@ public class LibraryService extends ABaseService<Library> implements ILibrarySer
 		return repository;
 	}
 	
+	@Override
+	protected Class<Library> getEntityClass() {
+		return Library.class;
+	}
+	
 	@Autowired
 	private ILibraryRepository repository;
 	
@@ -155,6 +160,9 @@ public class LibraryService extends ABaseService<Library> implements ILibrarySer
         entityUpdate.setUpdatedBy((long)1); //Cuanto esté el loggin, se debe enviar el ID del usuario con Auth
         getRepository().save(entityUpdate);
     }
+
+
+
 
 
 }

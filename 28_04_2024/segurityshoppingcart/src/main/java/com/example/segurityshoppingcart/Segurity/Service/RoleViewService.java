@@ -20,5 +20,10 @@ public class RoleViewService extends ABaseService<RoleView> implements IRoleView
     @Autowired
     private IRoleViewRepository repository;
 
+	@Override
+	protected Class<RoleView> getEntityClass() {
+		return RoleView.class;
+	}
+
     
 }

@@ -24,17 +24,17 @@ public class ABaseController <T extends ABaseEntity, S extends IBaseService<T>>{
         this.service = service;
         this.entityName = entityName;
     }
-    /*
-    @GetMapping("/exists")
+    
+    @GetMapping
     public ResponseEntity<ApiResponseDto<List<T>>> allByDeletedAt() {
         try {
             return ResponseEntity.ok(new ApiResponseDto<List<T>>("Datos obtenidos", service.allByDeletedAt(), true));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(new ApiResponseDto<List<T>>(e.getMessage(), null, false));
         }
-    }*/
+    }
     
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<ApiResponseDto<List<T>>> all() {
         try {
             return ResponseEntity.ok(new ApiResponseDto<List<T>>("Datos obtenidos", service.all(), true));
